@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpreadsheetBench</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <style>
+    table {
+        padding: 0;
+        word-break: initial;
+    }
+    table tr {
+        border: 1px solid #dfe2e5;
+        margin: 0;
+        padding: 0;
+    }
+    table tr:nth-child(2n),
+    thead {
+        background-color: #f8f8f8;
+    }
+    table th {
+        font-weight: bold;
+        border: 1px solid #dfe2e5;
+        border-bottom: 0;
+        margin: 0;
+        padding: 6px 13px;
+    }
+    table td {
+        border: 1px solid #dfe2e5;
+        margin: 0;
+        padding: 6px 13px;
+    }
+    table th:first-child,
+    table td:first-child {
+        margin-top: 0;
+    }
+    table th:last-child,
+    table td:last-child {
+        margin-bottom: 0;
+    }
+    h1 {
+        font-size: 2.25em;
+        line-height: 1.2;
+        border-bottom: 1px solid #eee;
+    }
+    h2 {
+        font-size: 1.75em;
+        line-height: 1.225;
+        border-bottom: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h2 class="title is-1 publication-title">SpreadsheetBench: Towards Challenging Real World Spreadsheet Manipulation</h2>
+          <!-- <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Xiaokang Zhang<sup>1*</sup>,
+            </span>
+            <span class="author-block">
+              Jing Zhang<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Zeyao Ma<sup>1*</sup>,
+            </span>
+            <span class="author-block">
+              Yang Li<sup>1*</sup>,
+            </span>
+            <span class="author-block">
+              Bohan Zhang<sup>1*</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup> School of Information, Renmin University of China, China</span><br>
+            <span class="author-block"><sup>2</sup>Computer Science, Tsinghua University</span><br>
+          </div> -->
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Paper Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/RUCKBReasoning/SpreadsheetBench"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://huggingface.co/datasets/RUCKBReasoning/TableLLM-SFT"
+                    class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                </a>
+              </span> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduce SpreadsheetBench, a challenging spreadsheet manipulation benchmark exclusively 
+            derived from real-world scenarios, designed to immerse current large language models (LLMs) 
+            in the actual workflow of spreadsheet users. Unlike existing benchmarks that rely on 
+            synthesized queries and simplified spreadsheet files, SpreadsheetBench is built from 912 
+            real questions gathered from online Excel forums, which reflect the intricate needs of users. 
+            The associated spreadsheets from the forums contain a variety of tabular data such as multiple 
+            tables, non-standard relational tables, and abundant non-textual elements. Furthermore, we 
+            propose a more reliable evaluation metric akin to online judge platforms, where multiple 
+            spreadsheet files are created as test cases for each instruction, ensuring the evaluation 
+            of robust solutions capable of handling spreadsheets with varying values. Our comprehensive 
+            evaluation of various LLMs under both single-round and multi-round inference settings reveals 
+            a substantial gap between the state-of-the-art (SOTA) models and human performance, highlighting 
+            the benchmark's difficulty.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Overview -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Construction Pipeline</h2>
+        <div class="publication-video">
+          <img src="static/images/pipeline.png"/>
+        </div>
+      </div>
+    </div>
+    <!--/ Overview -->
+  </div>
+
+  <div class="container is-max-desktop">
+    <!-- Evaluation Results -->
+
+    <!-- Contact -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Contact</h2>
+        <div class="content has-text-justified">
+          <p>
+            If you have any questions, we encourage you to either create Github issues 
+            or get in touch with us at <a href="mailto:zeyaoma@ruc.edu.cn">zeyaoma@ruc.edu.cn</a> or
+            <a href="mailto:zbhmint@bit.edu.cn">zbhmint@bit.edu.cn</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            <b>This webpage is intended for academic purposes, not for commercial promotion.</b>
+          </p>
+          <p>
+            It is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
