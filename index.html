@@ -1,242 +1,457 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="description" content="SpreadsheetBench: Towards Challenging Real World Spreadsheet Manipulation">
+  <meta name="keywords" content="SpreadsheetBench, spreadsheet-manipulation, benchmark, large-language-model">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SpreadsheetBench</title>
+  <title>SpreadsheetBench: Towards Challenging Real World Spreadsheet Manipulation</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0EXCB9YRX9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-PYVRSFMDRL');
+    gtag('config', 'G-0EXCB9YRX9');
   </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+
+  <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.table.min.css">
+  <!--  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">-->
+  <link rel="stylesheet" href="./stylesheets/layout.css">
+  <link rel="stylesheet" href="./stylesheets/index.css">
+
+  <link rel="icon" href="./static/images/logo.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
-  <style>
-    table {
-        padding: 0;
-        word-break: initial;
-    }
-    table tr {
-        border: 1px solid #dfe2e5;
-        margin: 0;
-        padding: 0;
-    }
-    table tr:nth-child(2n),
-    thead {
-        background-color: #f8f8f8;
-    }
-    table th {
-        font-weight: bold;
-        border: 1px solid #dfe2e5;
-        border-bottom: 0;
-        margin: 0;
-        padding: 6px 13px;
-    }
-    table td {
-        border: 1px solid #dfe2e5;
-        margin: 0;
-        padding: 6px 13px;
-    }
-    table th:first-child,
-    table td:first-child {
-        margin-top: 0;
-    }
-    table th:last-child,
-    table td:last-child {
-        margin-bottom: 0;
-    }
-    h1 {
-        font-size: 2.25em;
-        line-height: 1.2;
-        border-bottom: 1px solid #eee;
-    }
-    h2 {
-        font-size: 1.75em;
-        line-height: 1.225;
-        border-bottom: 1px solid #eee;
-    }
-  </style>
 </head>
+
 <body>
 
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://github.com/RUCKBReasoning">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h2 class="title is-1 publication-title">SpreadsheetBench: Towards Challenging Real World Spreadsheet Manipulation</h2>
-          <!-- <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              Xiaokang Zhang<sup>1*</sup>,
-            </span>
-            <span class="author-block">
-              Jing Zhang<sup>1</sup>,
-            </span>
-            <span class="author-block">
-              Zeyao Ma<sup>1*</sup>,
-            </span>
-            <span class="author-block">
-              Yang Li<sup>1*</sup>,
-            </span>
-            <span class="author-block">
-              Bohan Zhang<sup>1*</sup>,
-            </span>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://tablellm.github.io/">
+              TableLLM
+            </a>
           </div>
+        </div>
+      </div>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup> School of Information, Renmin University of China, China</span><br>
-            <span class="author-block"><sup>2</sup>Computer Science, Tsinghua University</span><br>
-          </div> -->
+    </div>
+  </nav>
 
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
           <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- Paper Link. -->
-              <span class="link-block">
-                <a href=""
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
+            <h1 class="title is-1 publication-title">SpreadsheetBench: Towards Challenging Real World Spreadsheet Manipulation
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="">Zeyao Ma</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="">Bohan Zhang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="">Jing Zhang</a><sup>1</sup>,
               </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/RUCKBReasoning/SpreadsheetBench"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
+              <span class="author-block">
+                <a href="">Jifan Yu</a><sup>2</sup>,
               </span>
-              <!-- Dataset Link. -->
-              <!-- <span class="link-block">
-                <a href="https://huggingface.co/datasets/RUCKBReasoning/TableLLM-SFT"
+              <span class="author-block">
+                <a href="">Xiaokang Zhang</a><sup>1</sup>,
+              </span>
+			  <br/>
+              <span class="author-block">
+                <a href="">Xiaohan Zhang</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="">Sijia Luo</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="">Xi Wang</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="">Jie Tang</a><sup>2</sup>,
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Renmin University of China,</span>
+              <span class="author-block"><sup>2</sup>Tsinghua University,</span>
+              <span class="author-block"><sup>3</sup>Zhipu.AI,</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href=""
                     class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/RUCKBReasoning/SpreadsheetBench"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href=""
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
                       <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                </a>
-              </span> -->
+                    </span>
+                    <span>Data</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="subtitle has-text-centered">
+          SpreadsheetBench is a challenging spreadsheet manipulation benchmark that 
+          (1) contains 912 questions exclusively derived from real-world scenarios,
+          (2) includes spreadsheet files with tabular data in various formats,
+          (3) features a more reliable evaluation metric akin to online judge platforms.
+        </h2>
+        <img src="static/images/pipeline.png">
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              We introduce SpreadsheetBench, a challenging spreadsheet manipulation 
+              benchmark exclusively derived from real-world scenarios, designed to 
+              immerse current large language models (LLMs) in the actual workflow of 
+              spreadsheet users. Unlike existing benchmarks that rely on synthesized 
+              queries and simplified spreadsheet files, SpreadsheetBench is built 
+              from 912 real questions gathered from online Excel forums, which reflect 
+              the intricate needs of users. The associated spreadsheets from the forums 
+              contain a variety of tabular data such as multiple tables, non-standard 
+              relational tables, and abundant non-textual elements. Furthermore, we 
+              propose a more reliable evaluation metric akin to online judge platforms, 
+              where multiple spreadsheet files are created as test cases for each 
+              instruction, ensuring the evaluation of robust solutions capable of 
+              handling spreadsheets with varying values. Our comprehensive evaluation 
+              of various LLMs under both single-round and multi-round inference settings 
+              reveals a substantial gap between the state-of-the-art (SOTA) models and 
+              human performance, highlighting the benchmark's difficulty.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Example. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Data Statistics and Comparison</h2>
+          <div class="content has-text-justified">
+            <p>
+              SpreadsheetBench comprising 912 instructions and 2,729 test cases, with an 
+              average of three test cases per instruction. The instructions in our benchmark 
+              cover a broad spectrum of spreadsheet manipulation types, including find, 
+              extract, sum, highlight, remove, modify, count, delete, calculate, and display. 
+              The spreadsheet files in our benchmark contain tabular data with various row 
+              size, column size, number of table and table formats.
+            </p>
+
+            <img src="static/images/data_statistic.png">
+
+            <p>
+              Table 1 compares SpreadsheetBench to other spreadsheet manipulation benchmarks.
+              Our questions are sourced exclusively from real-world data and exhibits a higher 
+              average word count per instruction. Our spreadsheet files contain multiple sheets 
+              with non-standard relational tables and multiple tables within a single sheet. 
+              Real-world questions often involve additional explanations within the spreadsheet, 
+              a characteristic not present in previous benchmarks. Furthermore, we employ OJ-style 
+              evaluation metrics with three test cases per instruction.
+            </p>
+
+            <img src="static/images/comparison.png">
+
+          </div>
+        </div>
+      </div>
+      <!--/ Example. -->
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Examples. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Data Examples</h2>
+          <div class="content has-text-justified">
+
+            <p>
+              SpreadsheetBench incorporates complex questions based on real-world scenarios and 
+              diverse types of tables in spreadsheet files, compared to previous benchmarks. We 
+              present four data examples in SpreadsheetBench to illustrate the attributes of 
+              real-world problems and the challenging of our benchmark.
+            </p>
+
+            <div class="tabs is-centered example_lst">
+              <ul>
+                <li class="is-active"><a title="Example 1">Example 1</a></li>
+                <li><a title="Example 2">Example 2</a></li>
+                <li><a title="Example 3">Example 3</a></li>
+                <li><a title="Example 4">Example 4</a></li>
+              </ul>
+            </div>
+
+            <script type="text/javascript">
+              document.querySelectorAll(".example_lst li").forEach(e => {
+                e.addEventListener("click", Click_2)
+              })
+
+              function Click_2(eve)
+              {
+                const iTxt = eve.srcElement.innerText
+                for(let v of document.querySelectorAll(".example_lst a"))
+                {
+                  if(iTxt === v.innerText)
+                  {
+                    v.parentElement.className = "is-active";
+                  } else {
+                    v.parentElement.className = "";
+                  }
+                }
+                for(let block of document.getElementsByClassName('lib_examples'))
+                {
+                  block.style.display = (block.title === iTxt) ? 'block' : 'none';
+                }
+              }
+
+            </script>
+
+            <div title="Example 1" class="lib_examples" style="display: block;">
+              <img src="static/images/example_1.png">
+              <p>
+                Example 1: A cell-level manipulation example question involves manipulating a 
+                non-standard relational table (missing header on column D and column E).
+              </p>
+              <p>
+                This example shows a cell-level manipulation data example which aims to extract a 
+                specific part of a text string from a column of cells. The instruction contains 
+                the demand of the user and an example manipulating action of the question, which 
+                rarely occur in synthetic instructions of the previous benchmarks. Furthermore, 
+                the table within the spreadsheet file is a non-standard relational table that 
+                lacks a complete table header. The final result is required to be filled in the 
+                cells from B3 to B14, which ensure the uniqueness of the answer.
+              </p>
+            </div>
+
+            <div title="Example 2" class="lib_examples" style="display: none;">
+              <img src="static/images/example_2.png">
+              <p>
+                Example 2: A sheet-level manipulation example question involves manipulating multiple 
+                tables in one sheet (first table from A1 to B22; second table from E1 to T22).
+              </p>
+              <p>
+                This example shows a sheet-level manipulation data example aimed at creating a grid 
+                for a duty assignment schedule. The instruction contains the demand of the user, 
+                the current formula solution and the error encountered by the user. Besides, the 
+                spreadsheet file contains two relational tables in one sheet. The final result 
+                should be filled in a two dimensional position (i.e., F2 to T22).
+              </p>
+            </div>
+
+            <div title="Example 3" class="lib_examples" style="display: none;">
+              <img src="static/images/example_3.png">
+              <p>
+                Example 3: A sheet-level manipulation example question involves manipulating multiple tables on
+                multiple sheets (first table in sheet named BUYING, from A1 to J17; second table in 
+                sheet named SH2, from A4 to D10).
+              </p>
+              <p>
+                This example shows a sheet-level manipulation data example aims to search across 
+                sheets based on a sheet name and two dates (i.e., first date and last date). The 
+                instruction contains a complex requirements, a detailed explanation, a manipulation 
+                example and the error encountered by the user. Moreover, the spreadsheet file 
+                contains multiple sheets, including the table to be manipulated (e.g., sheets named 
+                BUYING or SALES) and examples of possible answers (e.g., sheets named CASE1 or CASE2).
+                The final result should be inserted into a two-dimensional location on the sheet named SH2.
+              </p>
+            </div>
+
+            <div title="Example 4" class="lib_examples" style="display: none;">
+              <img src="static/images/example_4.png">
+              <p>
+                Example 4: A test case modified from the question in Example 3.
+              </p>
+              <p>
+                This example shows a test case modified from the question in Example 3. This test case is 
+                constructed following the user's requirements in the instruction. The user expects to obtain 
+                a result that will search within a specific sheet name (cell G2). Only the rows with a date 
+                falling between the first date (cell C2) and last date (Cell E2) should be returned. Therefore, 
+                we modify the value of the sheet name (cell G2) to construct a new test case, as highlighted in 
+                yellow. This test case yields search results in the SALES sheet, rather than the original 
+                case that searches in the BUYING sheet. The values in the answer position also change, as 
+                highlighted in red. By modifying the sheet name, we can alter the sheet that is being searched, 
+                enabling a more comprehensive assessment of the solution's effectiveness.
+              </p>
             </div>
 
           </div>
         </div>
       </div>
+      <!--/ Examples. -->
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            We introduce SpreadsheetBench, a challenging spreadsheet manipulation benchmark exclusively 
-            derived from real-world scenarios, designed to immerse current large language models (LLMs) 
-            in the actual workflow of spreadsheet users. Unlike existing benchmarks that rely on 
-            synthesized queries and simplified spreadsheet files, SpreadsheetBench is built from 912 
-            real questions gathered from online Excel forums, which reflect the intricate needs of users. 
-            The associated spreadsheets from the forums contain a variety of tabular data such as multiple 
-            tables, non-standard relational tables, and abundant non-textual elements. Furthermore, we 
-            propose a more reliable evaluation metric akin to online judge platforms, where multiple 
-            spreadsheet files are created as test cases for each instruction, ensuring the evaluation 
-            of robust solutions capable of handling spreadsheets with varying values. Our comprehensive 
-            evaluation of various LLMs under both single-round and multi-round inference settings reveals 
-            a substantial gap between the state-of-the-art (SOTA) models and human performance, highlighting 
-            the benchmark's difficulty.
-          </p>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Experiments. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Experiments</h2>
+          <div class="content has-text-justified">
+            <p>
+              We evaluate LLMs across five categories: (1) TableQA models (e.g., Binder), (2) Open-source code 
+              models (e.g., DeepseekCoder), (3) Open-source general models (e.g., Llama 3), (4) Close-source 
+              models (e.g., GPT-4), and (5) Spreadsheet-specific methods or products (e.g., SheetCopilot).
+            </p>
+            <p>
+              We evaluate LLMs under two distinct settings: 1. Single Round: In this mode, we present the model 
+              with the initial few rows of spreadsheet files within the prompt, allowing for only one inference. 
+              2. Multi-Round: Building on the single-round prompt setting, we incorporate additional prompt that 
+              utilizes the ReAct technique and code execution feedback to enhance the accuracy of code solutions 
+              produced by LLMs over multi-round conversation.
+            </p>
+
+            <img src="static/images/experiments.png">
+
+            <p>
+              The results shown in Table 2 indicate that current LLMs and spreadsheet agents are inadequate in 
+              managing complex spreadsheet manipulation tasks as required by real-world scenarios. Even the most 
+              advanced spreadsheet agent, Copilot in Excel, only achieves an accuracy of roughly 20%. GPT-4o, the 
+              SOTA LLM, scores around 17% in accuracy, aligning with Copilot in Excel's performance. Open-source 
+              LLMs significantly underperform compared to the SOTA model, likely due to their limited comprehension 
+              and coding proficiency. Overall, there is a substantial gap between existing LLMs or products and human 
+              performance produced by Excel experts, emphasizing the critical need for advancement in LLMs tailored 
+              for spreadsheet manipulation. 
+            </p>
+
+          </div>
+        </div>
+      </div>
+      <!--/ Experiments. -->
+    </div>
+  </section>
+
+  <!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-body">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@article{Lai2022DS1000,
+  title={DS-1000: A Natural and Reliable Benchmark for Data Science Code Generation},
+  author={Lai, Yuhang and Li, Chengxi and Wang, Yiming and Zhang, Tianyi and Zhong, Ruiqi and Zettlemoyer, Luke and Yih, Wen-Tau and Fried, Daniel and Wang, Sida and Yu, Tao},
+  journal={ArXiv},
+  year={2022},
+  volume={abs/2211.11501}
+}</code></pre>
+      </div>
+    </div>
+  </section> -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://arxiv.org/pdf/2211.11501">
+          <i class="fas fa-file-pdf" style="color:white"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/xlang-ai/DS-1000" class="external-link" disabled>
+          <i class="fab fa-github" style="color:white"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source
+                code</a> of this website,
+              we just ask that you link back to this page in the footer.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-
-    <!-- Overview -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Construction Pipeline</h2>
-        <div class="publication-video">
-          <img src="static/images/pipeline.png"/>
-        </div>
-      </div>
-    </div>
-    <!--/ Overview -->
-  </div>
-
-  <div class="container is-max-desktop">
-    <!-- Evaluation Results -->
-
-    <!-- Contact -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Contact</h2>
-        <div class="content has-text-justified">
-          <p>
-            If you have any questions, we encourage you to either create Github issues 
-            or get in touch with us at <a href="mailto:zeyaoma@ruc.edu.cn">zeyaoma@ruc.edu.cn</a> or
-            <a href="mailto:zbhmint@bit.edu.cn">zbhmint@bit.edu.cn</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            <b>This webpage is intended for academic purposes, not for commercial promotion.</b>
-          </p>
-          <p>
-            It is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
+  </footer>
 
 </body>
+
 </html>
