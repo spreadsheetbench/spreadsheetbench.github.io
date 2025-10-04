@@ -500,6 +500,35 @@
       }
     }
 
+    /* 新增：Leaderboard 脚注样式 */
+    .footnote-box {
+      background-color: #f8f9fa; /* 浅灰背景，与 .benchmark-intro-box 一致 */
+      border: 1px solid #dee2e6; /* 添加边框，与介绍框风格统一 */
+      color: #495057; /* 深灰色文字，易读 */
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .footnote-box p {
+      margin-bottom: 10px;
+    }
+
+    .footnote-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .footnote-box a {
+      color: #3498db; /* 使用蓝色链接 */
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footnote-box a:hover {
+      text-decoration: underline;
+    }
 
   </style>
 </head>
@@ -601,7 +630,7 @@
         <div class="table-header">
           <div>RANK</div>
           <div>MODEL</div>
-          <div>SETTING</div>
+          <div>SCAFFOLD</div>
           <div>SCORE</div>
           <div>DATE</div>
           <div>ORG</div>
@@ -610,7 +639,7 @@
         <div class="table-row">
           <div class="rank rank-1">1</div>
           <div class="model-name">Copilot in Excel (Agent Mode)</div>
-          <div class="setting-text">OVERALL</div>
+          <div class="setting-text">Private</div>
           <div class="score">57.2%</div>
           <div class="date">Sep 29, 2025</div>
           <a href="https://www.microsoft.com" class="external-link" target="_blank">Microsoft</a>
@@ -618,7 +647,7 @@
         <div class="table-row">
           <div class="rank rank-2">2</div>
           <div class="model-name">Shortcut.ai</div>
-          <div class="setting-text">OVERALL</div>
+          <div class="setting-text">Private</div>
           <div class="score">46.6%</div>
           <div class="date">Sep 29, 2025</div>
           <a href="https://www.tryshortcut.ai" class="external-link" target="_blank">Shortcut.ai</a>
@@ -626,7 +655,7 @@
         <div class="table-row">
           <div class="rank rank-3">3</div>
           <div class="model-name">ChatGPT Agent w/ .xlsx</div>
-          <div class="setting-text">OVERALL</div>
+          <div class="setting-text">Private</div>
           <div class="score">45.5%</div>
           <div class="date">Jul 17, 2025</div>
           <a href="https://openai.com" class="external-link" target="_blank">OpenAI</a>
@@ -634,7 +663,7 @@
         <div class="table-row">
           <div class="rank rank-other">4</div>
           <div class="model-name">Claude Files Opus 4.1</div>
-          <div class="setting-text">OVERALL</div>
+          <div class="setting-text">Private</div>
           <div class="score">42.9%</div>
           <div class="date">Sep 29, 2025</div>
           <a href="https://www.anthropic.com" class="external-link" target="_blank">Anthropic</a>
@@ -642,7 +671,7 @@
         <div class="table-row">
           <div class="rank rank-other">5</div>
           <div class="model-name">ChatGPT Agent</div>
-          <div class="setting-text">OVERALL</div>
+          <div class="setting-text">Private</div>
           <div class="score">35.3%</div>
           <div class="date">Jul 17, 2025</div>
           <a href="https://openai.com" class="external-link" target="_blank">OpenAI</a>
@@ -650,7 +679,7 @@
         <div class="table-row">
           <div class="rank rank-other">6</div>
           <div class="model-name">OpenAI o3</div>
-          <div class="setting-text">OVERALL</div>
+          <div class="setting-text">Private</div>
           <div class="score">23.3%</div>
           <div class="date">Jul 17, 2025</div>
           <a href="https://openai.com" class="external-link" target="_blank">OpenAI</a>
@@ -658,7 +687,7 @@
         <div class="table-row">
           <div class="rank rank-other">7</div>
           <div class="model-name">Copilot in Excel</div>
-          <div class="setting-text">OVERALL</div>
+          <div class="setting-text">Private</div>
           <div class="score">20.0%</div>
           <div class="date">Oct 17, 2024</div>
           <a href="https://www.microsoft.com" class="external-link" target="_blank">Microsoft</a>
@@ -666,7 +695,7 @@
         <div class="table-row">
           <div class="rank rank-other">8</div>
           <div class="model-name">GPT-4o (Windows)</div>
-          <div class="setting-text">OVERALL</div>
+          <div class="setting-text">Single Turn</div>
           <div class="score">18.4%</div>
           <div class="date">Oct 17, 2024</div>
           <a href="https://openai.com" class="external-link" target="_blank">OpenAI</a>
@@ -674,12 +703,18 @@
         <div class="table-row">
           <div class="rank rank-other">9</div>
           <div class="model-name">GPT-4o (OSX)</div>
-          <div class="setting-text">OVERALL</div>
+          <div class="setting-text">Private</div>
           <div class="score">16.8%</div>
           <div class="date">Jul 17, 2025</div>
           <a href="https://openai.com" class="external-link" target="_blank">OpenAI</a>
         </div>
       </div>
+
+      <!-- 新增：Leaderboard 脚注 -->
+      <div class="footnote-box">
+        <p><em>*For private scaffold, benchmark results for OpenAI were <a href="https://openai.com/index/introducing-chatgpt-agent/" target="_blank">published by OpenAI</a>. Benchmark results for Copilot in Excel (Agent Mode), Shortcut.ai, and Anthropic were <a href="https://www.microsoft.com/en-us/microsoft-365/blog/2025/09/29/vibe-working-introducing-agent-mode-and-office-agent-in-microsoft-365-copilot/" target="_blank">published by Microsoft</a>.</em></p>
+      </div>
+
     </div>
   </div>
 
