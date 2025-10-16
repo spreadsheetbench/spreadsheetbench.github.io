@@ -310,6 +310,27 @@
       line-height: 1.5;
     }
 
+    /* ======== 新增：状态标签样式 ========= */
+    .status-verified {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: 600;
+      background-color: var(--success);
+      color: white;
+    }
+
+    .status-unverified {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: 600;
+      background-color: var(--danger);
+      color: white;
+    }
+
     /* 响应式 */
     @media (max-width: 768px) {
       .table-header, .table-row {
@@ -624,13 +645,14 @@
           forums, covering a variety of tabular data such as multiple tables, non-standard relational 
           tables, and abundant non-textual elements.</p>
         <p>Visit the <a href="#" class="intro-link" onclick="showPage('overview'); return false;">Overview</a> page for benchmark details, research paper, code repository, and dataset downloads.</p>
+        <p>To <strong>submit your results</strong> to SpreadsheetBench, please contact zeyaoma@gmail.com and provide an API capable of generating your agent's results.</p>
       </div>
 
       <div class="leaderboard-container">
         <div class="table-header">
           <div>RANK</div>
           <div>MODEL</div>
-          <div>SCAFFOLD</div>
+          <div>STATUS</div>
           <div>SCORE</div>
           <div>DATE</div>
           <div>ORG</div>
@@ -638,24 +660,24 @@
 
         <div class="table-row">
           <div class="rank rank-1">1</div>
+          <div class="model-name">Shortcut.ai</div>
+          <div><span class="status-verified">Verified</span></div>
+          <div class="score">59.25%</div>
+          <div class="date">Oct 16, 2025</div>
+          <a href="https://www.tryshortcut.ai" class="external-link" target="_blank">Shortcut.ai</a>
+        </div>
+        <div class="table-row">
+          <div class="rank rank-2">2</div>
           <div class="model-name">Copilot in Excel (Agent Mode)</div>
-          <div class="setting-text">Private</div>
+          <div><span class="status-unverified">Unverified</span></div>
           <div class="score">57.2%</div>
           <div class="date">Sep 29, 2025</div>
           <a href="https://www.microsoft.com" class="external-link" target="_blank">Microsoft</a>
         </div>
         <div class="table-row">
-          <div class="rank rank-2">2</div>
-          <div class="model-name">Shortcut.ai</div>
-          <div class="setting-text">Private</div>
-          <div class="score">46.6%</div>
-          <div class="date">Sep 29, 2025</div>
-          <a href="https://www.tryshortcut.ai" class="external-link" target="_blank">Shortcut.ai</a>
-        </div>
-        <div class="table-row">
           <div class="rank rank-3">3</div>
           <div class="model-name">ChatGPT Agent w/ .xlsx</div>
-          <div class="setting-text">Private</div>
+          <div><span class="status-unverified">Unverified</span></div>
           <div class="score">45.5%</div>
           <div class="date">Jul 17, 2025</div>
           <a href="https://openai.com" class="external-link" target="_blank">OpenAI</a>
@@ -663,7 +685,7 @@
         <div class="table-row">
           <div class="rank rank-other">4</div>
           <div class="model-name">Claude Files Opus 4.1</div>
-          <div class="setting-text">Private</div>
+          <div><span class="status-unverified">Unverified</span></div>
           <div class="score">42.9%</div>
           <div class="date">Sep 29, 2025</div>
           <a href="https://www.anthropic.com" class="external-link" target="_blank">Anthropic</a>
@@ -671,7 +693,7 @@
         <div class="table-row">
           <div class="rank rank-other">5</div>
           <div class="model-name">ChatGPT Agent</div>
-          <div class="setting-text">Private</div>
+          <div><span class="status-unverified">Unverified</span></div>
           <div class="score">35.3%</div>
           <div class="date">Jul 17, 2025</div>
           <a href="https://openai.com" class="external-link" target="_blank">OpenAI</a>
@@ -679,7 +701,7 @@
         <div class="table-row">
           <div class="rank rank-other">6</div>
           <div class="model-name">OpenAI o3</div>
-          <div class="setting-text">Private</div>
+          <div><span class="status-unverified">Unverified</span></div>
           <div class="score">23.3%</div>
           <div class="date">Jul 17, 2025</div>
           <a href="https://openai.com" class="external-link" target="_blank">OpenAI</a>
@@ -687,23 +709,15 @@
         <div class="table-row">
           <div class="rank rank-other">7</div>
           <div class="model-name">Copilot in Excel</div>
-          <div class="setting-text">Private</div>
+          <div><span class="status-unverified">Unverified</span></div>
           <div class="score">20.0%</div>
           <div class="date">Oct 17, 2024</div>
           <a href="https://www.microsoft.com" class="external-link" target="_blank">Microsoft</a>
         </div>
         <div class="table-row">
           <div class="rank rank-other">8</div>
-          <div class="model-name">GPT-4o (Windows)</div>
-          <div class="setting-text">Single Turn</div>
-          <div class="score">18.4%</div>
-          <div class="date">Oct 17, 2024</div>
-          <a href="https://openai.com" class="external-link" target="_blank">OpenAI</a>
-        </div>
-        <div class="table-row">
-          <div class="rank rank-other">9</div>
           <div class="model-name">GPT-4o (OSX)</div>
-          <div class="setting-text">Private</div>
+          <div><span class="status-unverified">Unverified</span></div>
           <div class="score">16.8%</div>
           <div class="date">Jul 17, 2025</div>
           <a href="https://openai.com" class="external-link" target="_blank">OpenAI</a>
@@ -712,7 +726,7 @@
 
       <!-- 新增：Leaderboard 脚注 -->
       <div class="footnote-box">
-        <p><em>*For private scaffold, benchmark results for OpenAI were <a href="https://openai.com/index/introducing-chatgpt-agent/" target="_blank">published by OpenAI</a>. Benchmark results for Copilot in Excel (Agent Mode), Shortcut.ai, and Anthropic were <a href="https://www.microsoft.com/en-us/microsoft-365/blog/2025/09/29/vibe-working-introducing-agent-mode-and-office-agent-in-microsoft-365-copilot/" target="_blank">published by Microsoft</a>.</em></p>
+        <p><em>*Verified results are evaluated internally through APIs provided by the respective organizations. Unverified results are evaluated by external third parties, such as <a href="https://openai.com/index/introducing-chatgpt-agent/" target="_blank">OpenAI</a> and <a href="https://www.microsoft.com/en-us/microsoft-365/blog/2025/09/29/vibe-working-introducing-agent-mode-and-office-agent-in-microsoft-365-copilot/" target="_blank">Microsoft</a>.</em></p>
       </div>
 
     </div>
