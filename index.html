@@ -551,6 +551,22 @@
       text-decoration: underline;
     }
 
+    .news-box {
+      background-color: #e3f2fd; /* 浅蓝色背景，醒目但不刺眼 */
+      border-left: 4px solid var(--secondary); /* 左侧强调色边框 */
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 20px;
+      color: var(--primary);
+      font-weight: 500;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .news-box strong:first-child {
+      color: var(--accent); /* [NEWS] 用红色/强调色 */
+      margin-right: 6px;
+    }
+
   </style>
 </head>
 <body>
@@ -646,6 +662,12 @@
           tables, and abundant non-textual elements.</p>
         <p>Visit the <a href="#" class="intro-link" onclick="showPage('overview'); return false;">Overview</a> page for benchmark details, research paper, code repository, and dataset downloads.</p>
         <p>To <strong>submit your results</strong> to SpreadsheetBench, please contact spreadsheetbench@gmail.com and provide an API capable of generating your agent's results.</p>
+      </div>
+  
+      <div class="news-box">
+        <p>We are releasing <strong>SpreadsheetBench Verified</strong>, an expert annotated subset of 400 
+          instance. This benchmark was developed in collaboration with <a href="https://shortcut.ai/" class="external-link" target="_blank">Shortcut.AI</a> (Fundamental Research Labs).
+        </p>
       </div>
 
       <div class="leaderboard-container">
