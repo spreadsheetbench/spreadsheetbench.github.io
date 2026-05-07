@@ -156,25 +156,20 @@
     }
 
     #leaderboard-v2 .table-header,
-    #leaderboard-v2 .table-row,
-    #leaderboard-v2subset .table-header,
-    #leaderboard-v2subset .table-row {
+    #leaderboard-v2 .table-row {
       grid-template-columns: 50px 1.5fr 1fr 1fr 1fr 1fr 85px;
     }
 
-    #leaderboard-v2 .score-cell,
-    #leaderboard-v2subset .score-cell {
+    #leaderboard-v2 .score-cell {
       cursor: pointer;
     }
 
-    #leaderboard-v2 .score-cell .main-score,
-    #leaderboard-v2subset .score-cell .main-score {
+    #leaderboard-v2 .score-cell .main-score {
       font-weight: bold;
       color: var(--primary);
     }
 
-    #leaderboard-v2 .score-cell .score-arrow,
-    #leaderboard-v2subset .score-cell .score-arrow {
+    #leaderboard-v2 .score-cell .score-arrow {
       font-size: 10px;
       color: var(--medium-gray);
       margin-left: 4px;
@@ -182,13 +177,11 @@
       display: inline-block;
     }
 
-    #leaderboard-v2 .score-cell.open .score-arrow,
-    #leaderboard-v2subset .score-cell.open .score-arrow {
+    #leaderboard-v2 .score-cell.open .score-arrow {
       transform: rotate(180deg);
     }
 
-    #leaderboard-v2 .sub-scores,
-    #leaderboard-v2subset .sub-scores {
+    #leaderboard-v2 .sub-scores {
       display: none;
       font-size: 12px;
       color: var(--dark-gray);
@@ -196,13 +189,11 @@
       line-height: 1.6;
     }
 
-    #leaderboard-v2 .score-cell.open .sub-scores,
-    #leaderboard-v2subset .score-cell.open .sub-scores {
+    #leaderboard-v2 .score-cell.open .sub-scores {
       display: block;
     }
 
-    #leaderboard-v2 .sub-scores span,
-    #leaderboard-v2subset .sub-scores span {
+    #leaderboard-v2 .sub-scores span {
       color: var(--medium-gray);
       margin-right: 2px;
     }
@@ -740,6 +731,94 @@
       display: block;
     }
 
+    .results-content {
+      padding: 30px;
+    }
+
+    .results-intro-placeholder {
+      background: #f8f9fa;
+      border: 1px dashed #b8c2cc;
+      border-radius: 8px;
+      padding: 16px 18px;
+      margin: 8px 0 26px;
+      color: #495057;
+      line-height: 1.6;
+    }
+
+    .results-intro-placeholder p {
+      margin: 0;
+    }
+
+    .result-figure-note {
+      margin: 0 0 12px;
+      padding: 12px 14px;
+      text-align: left;
+      font-size: 0.88rem;
+    }
+
+    .result-figure {
+      margin: 0 0 28px;
+      text-align: center;
+    }
+
+    .result-figure:last-child {
+      margin-bottom: 0;
+    }
+
+    .result-figure-row {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      margin: 0 0 28px;
+    }
+
+    .result-figure-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .result-figure-row .result-figure {
+      flex: 0 1 var(--result-column-width, 50%);
+      margin-bottom: 0;
+    }
+
+    .result-figure img {
+      display: block;
+      width: var(--result-image-width, 100%);
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .result-figure figcaption {
+      margin-top: 10px;
+      color: var(--primary);
+      font-size: 0.95rem;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .result-figure figcaption strong {
+      font-weight: 700;
+    }
+
+    @media (max-width: 768px) {
+      .results-content {
+        padding: 22px 16px;
+      }
+
+      .result-figure-row {
+        flex-direction: column;
+      }
+
+      .result-figure-row .result-figure {
+        width: 100%;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -932,6 +1011,7 @@
       <div class="sub-tabs">
         <button class="sub-tab-btn active" data-subtab="v2-overview">Overview</button>
         <button class="sub-tab-btn" data-subtab="v2-example">Example</button>
+        <button class="sub-tab-btn" data-subtab="v2-results">Results</button>
       </div>
 
       <!-- V2 Overview -->
@@ -947,22 +1027,22 @@
 
           <!-- 核心流程图 -->
           <div class="pipeline-figure">
-            <img src="static/images/ssb-v2.png" alt="SpreadsheetBench 2 Overview" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+            <img src="static/images/v2-intro.png" alt="SpreadsheetBench 2 Overview" style="max-width: 90%; display: block; margin: 0 auto; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
             <figcaption>
-              <strong>Figure 1: </strong>Overview of SpreadsheetBench 2 task categories, including Debugging, Financial Modeling, Template, and Visualization.
+              <strong>Figure 1: </strong>Overview of SpreadsheetBench 2 task categories.
             </figcaption>
           </div>
 
           <h2>Key Features</h2>
           <ul>
             1. <strong>End-to-End Workflows: </strong> Tasks are designed as self-contained, multi-stage objectives requiring sequences of coordinated spreadsheet operations, rather than atomic formula generation or local edits.<br>
-            2. <strong>Professional Financial Domain: </strong> Covers real business scenarios including financial modeling with multi-statement integration, systematic error debugging across 10 error types, and data visualization.<br>
+            2. <strong>Professional Financial Domain: </strong> Covers real business scenarios including generation with multi-statement integration, systematic error debugging across 10 error types, and data visualization.<br>
             3. <strong>Complex Workbook Structures: </strong> Tasks involve workbooks with numerous sheets per question and require extensive cell modifications—debugging tasks require hundreds of cell edits on average, and financial modeling tasks require over a thousand.<br>
           </ul>
 
           <h2>Task Categories</h2>
           <p>
-            SpreadsheetBench 2 includes 224 real-world samples and 97 synthetic samples. Tasks are organized into three primary categories that mirror the lifecycle of professional spreadsheet usage:
+            SpreadsheetBench 2 includes 321 tasks. Tasks are organized into three primary categories that mirror the lifecycle of professional spreadsheet usage:
           </p>
           <ul>
             <li><strong>Financial Modeling/Template:</strong> Constructing structured spreadsheet artifacts including template completion and multi-step modeling scenarios.</li>
@@ -1002,6 +1082,42 @@
             <li><strong>AfterQuery:</strong> Sam Jacob, Siddharth Nagisetty, Abhiram Chundru, Jean Lin, Spencer Mateega</li>
             <li><strong>Shortcut.AI:</strong> Robert Yang, Nico Christie, Peter Wang, Richard Pham</li>
           </ul>
+        </div>
+      </div>
+
+      <!-- V2 Results -->
+      <div id="v2-results" class="sub-page">
+        <div class="overview-content results-content">
+          <h2>Results</h2>
+
+          <div class="results-intro-placeholder">
+            <p><strong>Table 1:</strong> Performance of open- and closed-source models across the four SpreadsheetBench 2 task categories. <strong>Modif.</strong> reports the average fraction of target cells whose computed values match the golden file. <strong>Acc.</strong> reports the fraction of tasks for which every output cell matches the golden file; for Visualization tasks, it instead denotes the average rubric pass rate, i.e., the fraction of expert-designed criteria satisfied per task. The Overall column aggregates all applicable tasks for each metric.</p>
+          </div>
+
+          <figure class="result-figure" style="--result-image-width: 95%;">
+            <img src="static/images/main_results.png" alt="Main results on SpreadsheetBench 2 across task categories and overall scores">
+            <figcaption><strong>Table 1:</strong> Main results across task categories.</figcaption>
+          </figure>
+
+          <div class="results-intro-placeholder">
+            <p><strong>Figure 2:</strong> Performance on a representative 30-example subset spanning Financial Modeling, Debugging, and Visualization tasks. We compare models under our agent scaffold with four LLM-based spreadsheet products. The results show that these spreadsheet products do not outperform scaffolded models; among the spreadsheet products, Claude for Excel achieves the strongest performance.</p>
+          </div>
+
+          <div class="results-intro-placeholder result-figure-note">
+              <p><strong>Table 2:</strong> Scaffold evaluation with GLM-5 as the fixed backbone on a 50-sample subset. We compare our SWE-agent-based scaffold with three general-purpose coding-agent scaffolds, using the same <strong>Modif.</strong> and <strong>Acc.</strong> metrics as in Table 1.</p>
+          </div>
+
+          <div class="result-figure-row">
+            <figure class="result-figure" style="--result-column-width: 65%; --result-image-width: 100%;">
+              <img src="static/images/subset_score.png" alt="Overall performance scores across representative models and spreadsheet products">
+              <figcaption><strong>Figure 2:</strong> Performance on the representative subset.</figcaption>
+            </figure>
+
+            <figure class="result-figure result-compact" style="--result-column-width: 35%; --result-image-width: 100%;">
+              <img src="static/images/scaffold.png" alt="Agent scaffold comparison with modification and accuracy scores">
+              <figcaption><strong>Table 2:</strong> Agent scaffold comparison.</figcaption>
+            </figure>
+          </div>
         </div>
       </div>
 
@@ -1080,13 +1196,8 @@
 
       <div class="leaderboard-tabs">
         <button class="tab-btn active" data-tab="v2">V2 - Full</button>
-        <button class="tab-btn" data-tab="v2subset">V2 - Product</button>
         <button class="tab-btn" data-tab="full">V1 - Full (912)</button>
         <button class="tab-btn" data-tab="verified">V1 - Verified (400)</button>
-      </div>
-
-      <div id="leaderboard-v2subset-intro" class="benchmark-intro-box" style="display:none; margin-bottom: 15px;">
-        <p>Since spreadsheet products can only be evaluated manually, we selected a curated <strong>subset of 30 tasks</strong> (10 per category: Financial Modeling, Debugging, and Visualization). To ensure a fair comparison, we also report the Bash Agent scores on the same subset. This subset is slightly more challenging than the full set.</p>
       </div>
 
       <div class="leaderboard-container">
@@ -1368,163 +1479,6 @@
           </div>
         </div>
 
-        <div id="leaderboard-v2subset" style="display:none;">
-          <div class="table-header">
-            <div>RANK</div>
-            <div>MODEL</div>
-            <div>SCAFFOLD</div>
-            <div>STATUS</div>
-            <div>SCORE</div>
-            <div>DATE</div>
-            <div>ORG</div>
-          </div>
-
-          <div class="table-row">
-            <div class="rank rank-1">1</div>
-            <div class="model-name">Claude Opus 4.6</div>
-            <div>Bash Agent</div>
-            <div><span class="status-verified">Verified</span></div>
-            <div class="score-cell" onclick="this.classList.toggle('open')">
-              <div class="main-score">28.75% <span class="score-arrow">▼</span></div>
-              <div class="sub-scores"><span>Fin.Model:</span> 30.00%<br><span>Debug:</span> 20.00%<br><span>Vis:</span> 60.00%</div>
-            </div>
-            <div class="date">Mar 26, 2026</div>
-            <a href="https://www.anthropic.com" class="external-link" target="_blank">Anthropic</a>
-          </div>
-          <div class="table-row">
-            <div class="rank rank-2">2</div>
-            <div class="model-name">Gemini 3.1 Pro</div>
-            <div>Bash Agent</div>
-            <div><span class="status-verified">Verified</span></div>
-            <div class="score-cell" onclick="this.classList.toggle('open')">
-              <div class="main-score">19.82% <span class="score-arrow">▼</span></div>
-              <div class="sub-scores"><span>Fin.Model:</span> 30.00%<br><span>Debug:</span> 0.00%<br><span>Vis:</span> 60.00%</div>
-            </div>
-            <div class="date">Mar 26, 2026</div>
-            <a href="https://gemini.google.com/" class="external-link" target="_blank">Google</a>
-          </div>
-          <div class="table-row">
-            <div class="rank rank-3">3</div>
-            <div class="model-name">Claude in Excel</div>
-            <div>Private</div>
-            <div><span class="status-verified">Verified</span></div>
-            <div class="score-cell" onclick="this.classList.toggle('open')">
-              <div class="main-score">15.36% <span class="score-arrow">▼</span></div>
-              <div class="sub-scores"><span>Fin.Model:</span> 20.00%<br><span>Debug:</span> 0.00%<br><span>Vis:</span> 60.00%</div>
-            </div>
-            <div class="date">Mar 26, 2026</div>
-            <a href="https://www.anthropic.com" class="external-link" target="_blank">Anthropic</a>
-          </div>
-          <div class="table-row">
-            <div class="rank rank-other">4</div>
-            <div class="model-name">GPT-5.2</div>
-            <div>Bash Agent</div>
-            <div><span class="status-verified">Verified</span></div>
-            <div class="score-cell" onclick="this.classList.toggle('open')">
-              <div class="main-score">14.29% <span class="score-arrow">▼</span></div>
-              <div class="sub-scores"><span>Fin.Model:</span> 20.00%<br><span>Debug:</span> 0.00%<br><span>Vis:</span> 50.00%</div>
-            </div>
-            <div class="date">Mar 26, 2026</div>
-            <a href="https://www.openai.com" class="external-link" target="_blank">OpenAI</a>
-          </div>
-          <div class="table-row">
-            <div class="rank rank-other">5</div>
-            <div class="model-name">Kimi K2.5</div>
-            <div>Bash Agent</div>
-            <div><span class="status-verified">Verified</span></div>
-            <div class="score-cell" onclick="this.classList.toggle('open')">
-              <div class="main-score">13.21% <span class="score-arrow">▼</span></div>
-              <div class="sub-scores"><span>Fin.Model:</span> 20.00%<br><span>Debug:</span> 0.00%<br><span>Vis:</span> 40.00%</div>
-            </div>
-            <div class="date">Mar 26, 2026</div>
-            <a href="https://www.moonshot.cn" class="external-link" target="_blank">Moonshot</a>
-          </div>
-          <div class="table-row">
-            <div class="rank rank-other">6</div>
-            <div class="model-name">GLM-5.0</div>
-            <div>Bash Agent</div>
-            <div><span class="status-verified">Verified</span></div>
-            <div class="score-cell" onclick="this.classList.toggle('open')">
-              <div class="main-score">11.07% <span class="score-arrow">▼</span></div>
-              <div class="sub-scores"><span>Fin.Model:</span> 20.00%<br><span>Debug:</span> 0.00%<br><span>Vis:</span> 20.00%</div>
-            </div>
-            <div class="date">Mar 26, 2026</div>
-            <a href="https://www.zhipuai.cn" class="external-link" target="_blank">Zhipu.AI</a>
-          </div>
-          <div class="table-row">
-            <div class="rank rank-other">7</div>
-            <div class="model-name">GLM in Excel</div>
-            <div>Private</div>
-            <div><span class="status-verified">Verified</span></div>
-            <div class="score-cell" onclick="this.classList.toggle('open')">
-              <div class="main-score">9.82% <span class="score-arrow">▼</span></div>
-              <div class="sub-scores"><span>Fin.Model:</span> 10.00%<br><span>Debug:</span> 0.00%<br><span>Vis:</span> 50.00%</div>
-            </div>
-            <div class="date">Mar 26, 2026</div>
-            <a href="https://www.zhipuai.cn" class="external-link" target="_blank">Zhipu.AI</a>
-          </div>
-          <div class="table-row">
-            <div class="rank rank-other">7</div>
-            <div class="model-name">ChatGPT for Excel</div>
-            <div>Private</div>
-            <div><span class="status-verified">Verified</span></div>
-            <div class="score-cell" onclick="this.classList.toggle('open')">
-              <div class="main-score">9.82% <span class="score-arrow">▼</span></div>
-              <div class="sub-scores"><span>Fin.Model:</span> 10.00%<br><span>Debug:</span> 0.00%<br><span>Vis:</span> 50.00%</div>
-            </div>
-            <div class="date">Mar 26, 2026</div>
-            <a href="https://www.openai.com" class="external-link" target="_blank">OpenAI</a>
-          </div>
-          <div class="table-row">
-            <div class="rank rank-other">9</div>
-            <div class="model-name">Kimi Sheet</div>
-            <div>Private</div>
-            <div><span class="status-verified">Verified</span></div>
-            <div class="score-cell" onclick="this.classList.toggle('open')">
-              <div class="main-score">4.29% <span class="score-arrow">▼</span></div>
-              <div class="sub-scores"><span>Fin.Model:</span> 0.00%<br><span>Debug:</span> 0.00%<br><span>Vis:</span> 40.00%</div>
-            </div>
-            <div class="date">Mar 26, 2026</div>
-            <a href="https://www.moonshot.cn" class="external-link" target="_blank">Moonshot</a>
-          </div>
-          <div class="table-row">
-            <div class="rank rank-other">9</div>
-            <div class="model-name">Qwen3.5-397B-A17B</div>
-            <div>Bash Agent</div>
-            <div><span class="status-verified">Verified</span></div>
-            <div class="score-cell" onclick="this.classList.toggle('open')">
-              <div class="main-score">4.29% <span class="score-arrow">▼</span></div>
-              <div class="sub-scores"><span>Fin.Model:</span> 0.00%<br><span>Debug:</span> 0.00%<br><span>Vis:</span> 40.00%</div>
-            </div>
-            <div class="date">Mar 26, 2026</div>
-            <a href="https://qwen.ai/" class="external-link" target="_blank">Alibaba</a>
-          </div>
-          <div class="table-row">
-            <div class="rank rank-other">11</div>
-            <div class="model-name">MiniMax M2.5</div>
-            <div>Bash Agent</div>
-            <div><span class="status-verified">Verified</span></div>
-            <div class="score-cell" onclick="this.classList.toggle('open')">
-              <div class="main-score">3.21% <span class="score-arrow">▼</span></div>
-              <div class="sub-scores"><span>Fin.Model:</span> 0.00%<br><span>Debug:</span> 0.00%<br><span>Vis:</span> 30.00%</div>
-            </div>
-            <div class="date">Mar 26, 2026</div>
-            <a href="https://www.minimax.io" class="external-link" target="_blank">MiniMax</a>
-          </div>
-          <div class="table-row">
-            <div class="rank rank-other">12</div>
-            <div class="model-name">Deepseek-V3.2</div>
-            <div>Bash Agent</div>
-            <div><span class="status-verified">Verified</span></div>
-            <div class="score-cell" onclick="this.classList.toggle('open')">
-              <div class="main-score">2.14% <span class="score-arrow">▼</span></div>
-              <div class="sub-scores"><span>Fin.Model:</span> 0.00%<br><span>Debug:</span> 0.00%<br><span>Vis:</span> 20.00%</div>
-            </div>
-            <div class="date">Mar 26, 2026</div>
-            <a href="https://www.deepseek.com" class="external-link" target="_blank">DeepSeek</a>
-          </div>
-        </div>
-
       </div>
 
       <!-- 新增：Leaderboard 脚注 -->
@@ -1658,8 +1612,6 @@
         document.getElementById('leaderboard-full').style.display = tab === 'full' ? 'block' : 'none';
         document.getElementById('leaderboard-verified').style.display = tab === 'verified' ? 'block' : 'none';
         document.getElementById('leaderboard-v2').style.display = tab === 'v2' ? 'block' : 'none';
-        document.getElementById('leaderboard-v2subset').style.display = tab === 'v2subset' ? 'block' : 'none';
-        document.getElementById('leaderboard-v2subset-intro').style.display = tab === 'v2subset' ? 'block' : 'none';
       });
     });
 
