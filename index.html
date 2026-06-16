@@ -160,6 +160,13 @@
       grid-template-columns: 50px 1.5fr 1fr 1fr 1fr 1fr 85px;
     }
 
+    @media (min-width: 769px) {
+      #leaderboard-verified .table-header,
+      #leaderboard-verified .table-row {
+        grid-template-columns: 80px 1.4fr 1fr 1fr 1fr 1.6fr;
+      }
+    }
+
     #leaderboard-v2 .score-cell {
       cursor: pointer;
     }
@@ -1249,6 +1256,14 @@
 
           <div class="table-row">
             <div class="rank rank-1">1</div>
+            <div class="model-name">WPS AI (Seed 2.0)</div>
+            <div><span class="status-verified">Verified</span></div>
+            <div class="score">73.46%</div>
+            <div class="date">May 09, 2026</div>
+            <a href="https://www.wps.cn/" class="external-link" target="_blank">Kingsoft Office</a>
+          </div>
+          <div class="table-row">
+            <div class="rank rank-2">2</div>
             <div class="model-name">Gemini in Google Sheets</div>
             <div><span class="status-verified">Verified</span></div>
             <div class="score">70.48%</div>
@@ -1256,7 +1271,7 @@
             <a href="https://workspace.google.com/" class="external-link" target="_blank">Google</a>
           </div>
           <div class="table-row">
-            <div class="rank rank-2">2</div>
+            <div class="rank rank-3">3</div>
             <div class="model-name">Qingqiu Agent</div>
             <div><span class="status-verified">Verified</span></div>
             <div class="score">69.96%</div>
@@ -1264,7 +1279,7 @@
             <a href="https://www.wps.cn/" class="external-link" target="_blank">Kingsoft Office</a>
           </div>
           <div class="table-row">
-            <div class="rank rank-3">3</div>
+            <div class="rank rank-other">4</div>
             <div class="model-name">Univer</div>
             <div><span class="status-verified">Verified</span></div>
             <div class="score">68.86%</div>
@@ -1272,7 +1287,7 @@
             <a href="https://univer.ai/" class="external-link" target="_blank">Univer</a>
           </div>
           <div class="table-row">
-            <div class="rank rank-other">4</div>
+            <div class="rank rank-other">5</div>
             <div class="model-name">灵犀</div>
             <div><span class="status-verified">Verified</span></div>
             <div class="score">66.89%</div>
@@ -1280,7 +1295,7 @@
             <a href="https://lingxi.wps.cn" class="external-link" target="_blank">Kingsoft Office</a>
           </div>
           <div class="table-row">
-            <div class="rank rank-other">5</div>
+            <div class="rank rank-other">6</div>
             <div class="model-name">Bluebox</div>
             <div><span class="status-verified">Verified</span></div>
             <div class="score">62.90%</div>
@@ -1288,7 +1303,7 @@
             <a href="https://blue-box.co/" class="external-link" target="_blank">Bluebox Labs</a>
           </div>
           <div class="table-row">
-            <div class="rank rank-other">6</div>
+            <div class="rank rank-other">7</div>
             <div class="model-name">Shortcut.ai</div>
             <div><span class="status-verified">Verified</span></div>
             <div class="score">59.25%</div>
@@ -1296,7 +1311,7 @@
             <a href="https://www.tryshortcut.ai" class="external-link" target="_blank">Shortcut.ai</a>
           </div>
           <div class="table-row">
-            <div class="rank rank-other">7</div>
+            <div class="rank rank-other">8</div>
             <div class="model-name">Copilot in Excel (Agent Mode)</div>
             <div><span class="status-unverified">Unverified</span></div>
             <div class="score">57.20%</div>
@@ -1304,7 +1319,7 @@
             <a href="https://www.microsoft.com" class="external-link" target="_blank">Microsoft</a>
           </div>
           <div class="table-row">
-            <div class="rank rank-other">8</div>
+            <div class="rank rank-other">9</div>
             <div class="model-name">ChatGPT Agent w/ .xlsx</div>
             <div><span class="status-unverified">Unverified</span></div>
             <div class="score">45.50%</div>
@@ -1312,7 +1327,7 @@
             <a href="https://openai.com" class="external-link" target="_blank">OpenAI</a>
           </div>
           <div class="table-row">
-            <div class="rank rank-other">9</div>
+            <div class="rank rank-other">10</div>
             <div class="model-name">Claude Files Opus 4.1</div>
             <div><span class="status-unverified">Unverified</span></div>
             <div class="score">42.90%</div>
@@ -1320,7 +1335,7 @@
             <a href="https://www.anthropic.com" class="external-link" target="_blank">Anthropic</a>
           </div>
           <div class="table-row">
-            <div class="rank rank-other">10</div>
+            <div class="rank rank-other">11</div>
             <div class="model-name">ChatGPT Agent</div>
             <div><span class="status-unverified">Unverified</span></div>
             <div class="score">35.30%</div>
@@ -1328,7 +1343,7 @@
             <a href="https://openai.com" class="external-link" target="_blank">OpenAI</a>
           </div>
           <div class="table-row">
-            <div class="rank rank-other">11</div>
+            <div class="rank rank-other">12</div>
             <div class="model-name">OpenAI o3</div>
             <div><span class="status-unverified">Unverified</span></div>
             <div class="score">23.30%</div>
@@ -1349,6 +1364,14 @@
 
           <div class="table-row">
             <div class="rank rank-1">1</div>
+            <div class="model-name">Data Analysis Agent</div>
+            <div><span class="status-verified">Verified</span></div>
+            <div class="score">96.50%</div>
+            <div class="date">Jun 16, 2026</div>
+            <a href="https://www.larksuite.com/product/base" class="external-link" target="_blank">ByteDance Lark Base &amp; NovaBase Team</a>
+          </div>
+          <div class="table-row">
+            <div class="rank rank-2">2</div>
             <div class="model-name">Qingqiu Agent</div>
             <div><span class="status-verified">Verified</span></div>
             <div class="score">94.75%</div>
@@ -1356,7 +1379,7 @@
             <a href="https://www.wps.cn/" class="external-link" target="_blank">Kingsoft Office</a>
           </div>
           <div class="table-row">
-            <div class="rank rank-2">2</div>
+            <div class="rank rank-3">3</div>
             <div class="model-name">Tetra-Beta-2</div>
             <div><span class="status-verified">Verified</span></div>
             <div class="score">94.25%</div>
@@ -1364,7 +1387,7 @@
             <a href="https://dealglass.com/" class="external-link" target="_blank">DealGlass</a>
           </div>
           <div class="table-row">
-            <div class="rank rank-3">3</div>
+            <div class="rank rank-other">4</div>
             <div class="model-name">GPT for Excel</div>
             <div><span class="status-verified">Verified</span></div>
             <div class="score">92.50%</div>
@@ -1372,7 +1395,7 @@
             <a href="https://talarian.io" class="external-link" target="_blank">Talarian</a>
           </div>
           <div class="table-row">
-            <div class="rank rank-other">4</div>
+            <div class="rank rank-other">5</div>
             <div class="model-name">WPS AI (Seed 2.0)</div>
             <div><span class="status-verified">Verified</span></div>
             <div class="score">91.25%</div>
@@ -1380,7 +1403,7 @@
             <a href="https://www.wps.cn/" class="external-link" target="_blank">Kingsoft Office</a>
           </div>
           <div class="table-row">
-            <div class="rank rank-other">5</div>
+            <div class="rank rank-other">6</div>
             <div class="model-name">Nobie Agent</div>
             <div><span class="status-verified">Verified</span></div>
             <div class="score">91.00%</div>
@@ -1388,7 +1411,7 @@
             <a href="https://www.nobie.com" class="external-link" target="_blank">Nobie</a>
           </div>
           <div class="table-row">
-            <div class="rank rank-other">6</div>
+            <div class="rank rank-other">7</div>
             <div class="model-name">Shortcut.ai</div>
             <div><span class="status-verified">Verified</span></div>
             <div class="score">86.00%</div>
@@ -1396,7 +1419,7 @@
             <a href="https://www.tryshortcut.ai" class="external-link" target="_blank">Shortcut.ai</a>
           </div>
           <div class="table-row">
-            <div class="rank rank-other">7</div>
+            <div class="rank rank-other">8</div>
             <div class="model-name">Kyra</div>
             <div><span class="status-verified">Verified</span></div>
             <div class="score">84.25%</div>
@@ -1404,7 +1427,7 @@
             <a href="https://vertexconsulting.in/" class="external-link" target="_blank">Vertex Consulting</a>
           </div>
           <div class="table-row">
-            <div class="rank rank-other">8</div>
+            <div class="rank rank-other">9</div>
             <div class="model-name">Decide Agent</div>
             <div><span class="status-verified">Verified</span></div>
             <div class="score">82.50%</div>
