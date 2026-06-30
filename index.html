@@ -623,6 +623,29 @@
       margin-right: 6px;
     }
 
+    .submission-guidelines-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 14px;
+      margin-left: 6px;
+      border: 1px solid #2563eb;
+      border-radius: 6px;
+      background-color: #fff;
+      color: #2563eb;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .submission-guidelines-btn:hover {
+      background-color: #2563eb;
+      color: #fff;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+      transform: translateY(-1px);
+    }
+
     .new-badge {
       display: inline-block;
       background: var(--accent);
@@ -1194,47 +1217,36 @@
       <div class="benchmark-intro-box">
         <p><strong>SpreadsheetBench</strong> evaluates large language model agents' capabilities in manipulating
           complex real-world spreadsheets (Version 1) and business spreadsheet workflows (Version 2). Visit the <a href="#" class="intro-link" onclick="showPage('v1'); return false;">V1 Overview</a> or <a href="#" class="intro-link" onclick="showPage('v2'); return false;">V2 Overview</a> page for benchmark details, research paper, code repository, and dataset downloads.</p>
-        <p>To <strong>submit your results</strong>, please contact spreadsheetbench@gmail.com, and provide an API capable of generating your agent's results.</p>
+        <p>To <strong>submit your results</strong>, please review the <a href="#" class="submission-guidelines-btn" onclick="document.getElementById('v2-submission-modal').style.display='flex'; return false;">Submission Guidelines</a>.</p>
       </div>
 
       <div class="news-box">
         <p>We are releasing <strong>SpreadsheetBench V2</strong>, a new benchmark for evaluating agents on end-to-end business spreadsheet workflows, covering financial modeling, debugging, and visualization in professional scenarios with complex multi-sheet workbooks.</p>
       </div>
 
-      <!-- V2 Submission Guidelines Modal
+      <!-- Submission Guidelines Modal -->
       <div id="v2-submission-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;align-items:center;justify-content:center;">
         <div style="background:#fff;border-radius:12px;padding:36px;max-width:640px;width:90%;max-height:80vh;overflow-y:auto;position:relative;box-shadow:0 8px 32px rgba(0,0,0,0.2);">
           <button onclick="document.getElementById('v2-submission-modal').style.display='none';" style="position:absolute;top:12px;right:16px;background:none;border:none;font-size:22px;cursor:pointer;color:#666;">&times;</button>
-          <h2 style="margin-top:0;font-size:1.4rem;color:#1e293b;">V2 Submission Guidelines</h2>
-          <p>Welcome to SpreadsheetBench V2. Please follow the steps below before submitting your results:</p>
+          <h2 style="margin-top:0;font-size:1.4rem;color:#1e293b;">Submission Guidelines</h2>
+          <p>Please email your submission materials to <a href="mailto:spreadsheetbench@gmail.com" style="color:#2563eb;">spreadsheetbench@gmail.com</a>. To help us review your results, include the following files:</p>
           <ol style="line-height:2;">
             <li>
-              Download the dataset and review the <code>dataset.json</code> format. Each entry contains an <code>instruction</code> field and a <code>spreadsheet_path</code> field. The dataset covers four categories: <strong>Debugging</strong>, <strong>Template</strong>, <strong>Financial_Model</strong>, and <strong>Visualization</strong>.
+              The running log file generated during inference.
             </li>
             <li>
-              Prepare an API endpoint that accepts two inputs: <code>instruction</code> (string) and <code>file</code> (the input spreadsheet). The API should return the processed <strong>.xlsx output file</strong>. If possible, support concurrent requests to improve evaluation efficiency.
+              The output files produced by your system.
             </li>
             <li>
-              Write a Python script that reads <code>dataset.json</code> from the dataset directory, iterates over each entry, and calls your API using the <code>instruction</code> and <code>spreadsheet_path</code> fields. Save each returned <strong>.xlsx output file</strong> to an output directory. The script should support the following parameters:
-              <ul style="margin-top:6px;">
-                <li><code>--dataset</code>: one of <code>Debugging</code>, <code>Template</code>, <code>Financial_Model</code>, <code>Visualization</code></li>
-                <li><code>--data_root</code>: path to the dataset directory (e.g. <code>/path/to/data/Debugging</code>), which contains <code>dataset.json</code></li>
-                <li><code>--api_url</code>: your agent's API endpoint</li>
-                <li><code>--api_key</code>: API key for authentication (optional)</li>
-                <li><code>--concurrency</code>: number of parallel API calls (default: 4)</li>
-                <li><code>--output_dir</code>: directory to save the output <code>.xlsx</code> files</li>
-              </ul>
+              The results generated by running the official evaluation code.
             </li>
             <li>
-              Contact us at <a href="mailto:spreadsheetbench@gmail.com" style="color:#2563eb;">spreadsheetbench@gmail.com</a> with your submission.
-            </li>
-            <li>
-              To ensure fairness, evaluations will be processed in the order submissions are received after this document is published.
+              Please provide all materials above so that we can review and verify your submission.
             </li>
           </ol>
-          <p style="margin-bottom:0;color:#64748b;font-size:0.9rem;">We will review your submission and add it to the leaderboard within a few business days.</p>
+          <p style="margin-bottom:0;color:#64748b;font-size:0.9rem;">We process submissions in batches once per week.</p>
         </div>
-      </div> -->
+      </div>
 
       <div class="leaderboard-tabs">
         <button class="tab-btn active" data-tab="v2">V2 - Full</button>
