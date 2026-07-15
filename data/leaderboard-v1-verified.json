@@ -42,6 +42,13 @@
     "date": "2026-04-20"
   },
   {
+    "model": "GRID Agent",
+    "organization": "GRID",
+    "url": "https://grid.is/",
+    "score": 91.25,
+    "date": "2026-07-15"
+  },
+  {
     "model": "WPS AI (Seed 2.0)",
     "organization": "Kingsoft Office",
     "url": "https://www.wps.cn/",
