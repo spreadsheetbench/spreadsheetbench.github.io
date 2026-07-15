@@ -1,0 +1,98 @@
+[
+  {
+    "model": "Qingqiu Agent",
+    "organization": "Kingsoft Office",
+    "url": "https://www.wps.cn/",
+    "verified": true,
+    "score": 83.11,
+    "date": "2026-06-23"
+  },
+  {
+    "model": "WPS AI (Seed 2.0)",
+    "organization": "Kingsoft Office",
+    "url": "https://www.wps.cn/",
+    "verified": true,
+    "score": 73.46,
+    "date": "2026-06-16"
+  },
+  {
+    "model": "Gemini in Google Sheets",
+    "organization": "Google",
+    "url": "https://workspace.google.com/",
+    "verified": true,
+    "score": 70.48,
+    "date": "2026-03-10"
+  },
+  {
+    "model": "Univer",
+    "organization": "Univer",
+    "url": "https://univer.ai/",
+    "verified": true,
+    "score": 68.86,
+    "date": "2025-11-18"
+  },
+  {
+    "model": "灵犀",
+    "organization": "Kingsoft Office",
+    "url": "https://lingxi.wps.cn",
+    "verified": true,
+    "score": 66.89,
+    "date": "2025-12-28"
+  },
+  {
+    "model": "Bluebox",
+    "organization": "Bluebox Labs",
+    "url": "https://blue-box.co/",
+    "verified": true,
+    "score": 62.9,
+    "date": "2025-10-28"
+  },
+  {
+    "model": "Shortcut.ai",
+    "organization": "Shortcut.ai",
+    "url": "https://www.tryshortcut.ai",
+    "verified": true,
+    "score": 59.25,
+    "date": "2025-10-16"
+  },
+  {
+    "model": "Copilot in Excel (Agent Mode)",
+    "organization": "Microsoft",
+    "url": "https://www.microsoft.com",
+    "verified": false,
+    "score": 57.2,
+    "date": "2025-09-29"
+  },
+  {
+    "model": "ChatGPT Agent w/ .xlsx",
+    "organization": "OpenAI",
+    "url": "https://openai.com",
+    "verified": false,
+    "score": 45.5,
+    "date": "2025-07-17"
+  },
+  {
+    "model": "Claude Files Opus 4.1",
+    "organization": "Anthropic",
+    "url": "https://www.anthropic.com",
+    "verified": false,
+    "score": 42.9,
+    "date": "2025-09-29"
+  },
+  {
+    "model": "ChatGPT Agent",
+    "organization": "OpenAI",
+    "url": "https://openai.com",
+    "verified": false,
+    "score": 35.3,
+    "date": "2025-07-17"
+  },
+  {
+    "model": "OpenAI o3",
+    "organization": "OpenAI",
+    "url": "https://openai.com",
+    "verified": false,
+    "score": 23.3,
+    "date": "2025-07-17"
+  }
+]

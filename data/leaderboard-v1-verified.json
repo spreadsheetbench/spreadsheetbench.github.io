@@ -1,0 +1,79 @@
+[
+  {
+    "model": "Qingqiu Agent",
+    "organization": "Kingsoft Office",
+    "url": "https://www.wps.cn/",
+    "score": 98.25,
+    "date": "2026-07-11"
+  },
+  {
+    "model": "Data Analysis Agent",
+    "organization": "ByteDance Lark Base & NovaBase Team",
+    "url": "https://www.larksuite.com/product/base",
+    "score": 96.5,
+    "date": "2026-06-16"
+  },
+  {
+    "model": "arito",
+    "organization": "arito",
+    "url": "https://arito.ai/",
+    "score": 95.5,
+    "date": "2026-07-15"
+  },
+  {
+    "model": "Tetra-Beta-2",
+    "organization": "DealGlass",
+    "url": "https://dealglass.com/",
+    "score": 94.25,
+    "date": "2026-03-07"
+  },
+  {
+    "model": "GPT for Excel",
+    "organization": "Talarian",
+    "url": "https://talarian.io",
+    "score": 92.5,
+    "date": "2026-05-05"
+  },
+  {
+    "model": "Leni",
+    "organization": "Leni Inc.",
+    "url": "https://leni.co/",
+    "score": 91.25,
+    "date": "2026-07-15"
+  },
+  {
+    "model": "WPS AI (Seed 2.0)",
+    "organization": "Kingsoft Office",
+    "url": "https://www.wps.cn/",
+    "score": 91.25,
+    "date": "2026-05-09"
+  },
+  {
+    "model": "Nobie Agent",
+    "organization": "Nobie",
+    "url": "https://www.nobie.com",
+    "score": 91,
+    "date": "2026-01-06"
+  },
+  {
+    "model": "Shortcut.ai",
+    "organization": "Shortcut.ai",
+    "url": "https://www.tryshortcut.ai",
+    "score": 86,
+    "date": "2025-12-02"
+  },
+  {
+    "model": "Kyra",
+    "organization": "Vertex Consulting",
+    "url": "https://vertexconsulting.in/",
+    "score": 84.25,
+    "date": "2026-03-06"
+  },
+  {
+    "model": "Decide Agent",
+    "organization": "Decide AI",
+    "url": "https://www.trydecide.ai",
+    "score": 82.5,
+    "date": "2026-01-29"
+  }
+]
