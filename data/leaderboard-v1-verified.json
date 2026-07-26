@@ -7,6 +7,13 @@
     "date": "2026-07-11"
   },
   {
+    "model": "WPS AI",
+    "organization": "Kingsoft Office",
+    "url": "https://www.wps.cn/",
+    "score": 96.75,
+    "date": "2026-07-26"
+  },
+  {
     "model": "Data Analysis Agent",
     "organization": "ByteDance Lark Base & NovaBase Team",
     "url": "https://www.larksuite.com/product/base",
@@ -49,13 +56,6 @@
     "date": "2026-07-15"
   },
   {
-    "model": "WPS AI (Seed 2.0)",
-    "organization": "Kingsoft Office",
-    "url": "https://www.wps.cn/",
-    "score": 91.25,
-    "date": "2026-05-09"
-  },
-  {
     "model": "Nobie Agent",
     "organization": "Nobie",
     "url": "https://www.nobie.com",
@@ -82,5 +82,12 @@
     "url": "https://www.trydecide.ai",
     "score": 82.5,
     "date": "2026-01-29"
+  },
+  {
+    "model": "fabric-rlm (MiniMax M3)",
+    "organization": "Fabric RLM",
+    "url": "https://github.com/pawarbi/fabric-rlm-core",
+    "score": 82.5,
+    "date": "2026-07-26"
   }
 ]
