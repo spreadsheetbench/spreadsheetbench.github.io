@@ -1,7 +1,37 @@
 [
   {
+    "model": "arito",
+    "scaffold": "arito",
+    "organization": "arito",
+    "url": "https://arito.ai",
+    "verified": true,
+    "score": 45.46,
+    "date": "2026-08-04",
+    "subscores": {
+      "Template": 44.33,
+      "Fin.Model": 55.00,
+      "Debug": 28.00,
+      "Visualization": 83.02
+    }
+  },
+  {
+    "model": "WPS AI",
+    "scaffold": "WPS AI",
+    "organization": "Kingsoft Office",
+    "url": "https://www.wps.cn/",
+    "verified": true,
+    "score": 42.27,
+    "date": "2026-03-26",
+    "subscores": {
+      "Template": 65.98,
+      "Fin.Model": 46.00,
+      "Debug": 12.00,
+      "Visualization": 57.02
+    }
+  },
+  {
     "model": "Claude Opus 4.6",
-    "scaffold": "Bash Agent",
+    "scaffold": "SWE-agent",
     "organization": "Anthropic",
     "url": "https://www.anthropic.com",
     "verified": true,
@@ -16,7 +46,7 @@
   },
   {
     "model": "GPT-5.2",
-    "scaffold": "Bash Agent",
+    "scaffold": "SWE-agent",
     "organization": "OpenAI",
     "url": "https://www.openai.com",
     "verified": true,
@@ -31,7 +61,7 @@
   },
   {
     "model": "Gemini 3.1 Pro",
-    "scaffold": "Bash Agent",
+    "scaffold": "SWE-agent",
     "organization": "Google",
     "url": "https://gemini.google.com/",
     "verified": true,
@@ -46,7 +76,7 @@
   },
   {
     "model": "GLM-5.0",
-    "scaffold": "Bash Agent",
+    "scaffold": "SWE-agent",
     "organization": "Zhipu.AI",
     "url": "https://www.zhipuai.cn",
     "verified": true,
@@ -61,7 +91,7 @@
   },
   {
     "model": "Deepseek-V3.2",
-    "scaffold": "Bash Agent",
+    "scaffold": "SWE-agent",
     "organization": "DeepSeek",
     "url": "https://www.deepseek.com",
     "verified": true,
@@ -76,7 +106,7 @@
   },
   {
     "model": "Kimi K2.5",
-    "scaffold": "Bash Agent",
+    "scaffold": "SWE-agent",
     "organization": "Moonshot",
     "url": "https://www.moonshot.cn",
     "verified": true,
@@ -91,7 +121,7 @@
   },
   {
     "model": "Qwen3.5-397B-A17B",
-    "scaffold": "Bash Agent",
+    "scaffold": "SWE-agent",
     "organization": "Alibaba",
     "url": "https://qwen.ai/",
     "verified": true,
@@ -106,7 +136,7 @@
   },
   {
     "model": "MiniMax M2.5",
-    "scaffold": "Bash Agent",
+    "scaffold": "SWE-agent",
     "organization": "MiniMax",
     "url": "https://www.minimax.io",
     "verified": true,

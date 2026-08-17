@@ -1,5 +1,12 @@
 [
   {
+    "model": "JT AlphaData",
+    "organization": "CMCC JIUTIAN",
+    "url": "",
+    "score": 98.50,
+    "date": "2026-08-14"
+  },
+  {
     "model": "Qingqiu Agent",
     "organization": "Kingsoft Office",
     "url": "https://www.wps.cn/",

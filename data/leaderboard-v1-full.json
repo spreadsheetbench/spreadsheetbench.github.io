@@ -8,6 +8,14 @@
     "date": "2026-06-23"
   },
   {
+    "model": "JT AlphaData",
+    "organization": "CMCC JIUTIAN",
+    "url": "",
+    "verified": true,
+    "score": 77.85,
+    "date": "2026-08-15"
+  },
+  {
     "model": "WPS AI (Seed 2.0)",
     "organization": "Kingsoft Office",
     "url": "https://www.wps.cn/",
