@@ -39,9 +39,24 @@
     "date": "2026-03-26",
     "subscores": {
       "Template": 52.58,
-      "Fin.Model": 34,
-      "Debug": 12,
-      "Visualization": 62.5
+      "Fin.Model": 34.00,
+      "Debug": 12.00,
+      "Visualization": 62.50
+    }
+  },
+  {
+    "model": "Decide Agent 2.0",
+    "scaffold": "Decide Agent 2.0",
+    "organization": "Decide",
+    "url": "https://trydecide.ai",
+    "verified": true,
+    "score": 33.81,
+    "date": "2026-08-25",
+    "subscores": {
+      "Template": 62.89,
+      "Fin.Model": 36.00,
+      "Debug": 0.00,
+      "Visualization": 48.05
     }
   },
   {
@@ -54,8 +69,8 @@
     "date": "2026-03-26",
     "subscores": {
       "Template": 35.05,
-      "Fin.Model": 33,
-      "Debug": 8,
+      "Fin.Model": 33.00,
+      "Debug": 8.00,
       "Visualization": 45.83
     }
   },
@@ -69,8 +84,8 @@
     "date": "2026-03-26",
     "subscores": {
       "Template": 28.87,
-      "Fin.Model": 31,
-      "Debug": 7,
+      "Fin.Model": 31.00,
+      "Debug": 7.00,
       "Visualization": 41.67
     }
   },
@@ -84,8 +99,8 @@
     "date": "2026-03-26",
     "subscores": {
       "Template": 17.53,
-      "Fin.Model": 22,
-      "Debug": 7,
+      "Fin.Model": 22.00,
+      "Debug": 7.00,
       "Visualization": 37.5
     }
   },
@@ -99,8 +114,8 @@
     "date": "2026-03-26",
     "subscores": {
       "Template": 25.77,
-      "Fin.Model": 7,
-      "Debug": 10,
+      "Fin.Model": 7.00,
+      "Debug": 10.00,
       "Visualization": 33.33
     }
   },
@@ -114,8 +129,8 @@
     "date": "2026-03-26",
     "subscores": {
       "Template": 18.56,
-      "Fin.Model": 15,
-      "Debug": 4,
+      "Fin.Model": 15.00,
+      "Debug": 4.00,
       "Visualization": 41.67
     }
   },
@@ -129,9 +144,9 @@
     "date": "2026-03-26",
     "subscores": {
       "Template": 17.53,
-      "Fin.Model": 10,
-      "Debug": 3,
-      "Visualization": 25
+      "Fin.Model": 10.00,
+      "Debug": 3.00,
+      "Visualization": 25.00
     }
   },
   {
@@ -144,8 +159,8 @@
     "date": "2026-03-26",
     "subscores": {
       "Template": 7.22,
-      "Fin.Model": 8,
-      "Debug": 4,
+      "Fin.Model": 8.00,
+      "Debug": 4.00,
       "Visualization": 16.67
     }
   }
