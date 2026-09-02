@@ -1,5 +1,20 @@
 [
   {
+    "model": "WPS AI",
+    "scaffold": "WPS AI",
+    "organization": "Kingsoft Office",
+    "url": "https://www.wps.cn/",
+    "verified": true,
+    "score": 50.86,
+    "date": "2026-08-29",
+    "subscores": {
+      "Template": 76.29,
+      "Fin.Model": 56.00,
+      "Debug": 16.00,
+      "Visualization": 71.94
+    }
+  },
+  {
     "model": "arito",
     "scaffold": "arito",
     "organization": "arito",
@@ -12,21 +27,6 @@
       "Fin.Model": 55.00,
       "Debug": 28.00,
       "Visualization": 83.02
-    }
-  },
-  {
-    "model": "WPS AI",
-    "scaffold": "WPS AI",
-    "organization": "Kingsoft Office",
-    "url": "https://www.wps.cn/",
-    "verified": true,
-    "score": 42.27,
-    "date": "2026-08-11",
-    "subscores": {
-      "Template": 65.98,
-      "Fin.Model": 46.00,
-      "Debug": 12.00,
-      "Visualization": 57.02
     }
   },
   {
