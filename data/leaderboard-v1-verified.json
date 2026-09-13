@@ -1,5 +1,12 @@
 [
   {
+    "model": "Data Analysis Agent",
+    "organization": "ByteDance Lark Base & NovaBase Team",
+    "url": "https://www.larksuite.com/product/base",
+    "score": 99.25,
+    "date": "2026-09-10"
+  },
+  {
     "model": "JT AlphaData",
     "organization": "CMCC JIUTIAN",
     "url": "",
@@ -19,13 +26,6 @@
     "url": "https://www.wps.cn/",
     "score": 96.75,
     "date": "2026-07-26"
-  },
-  {
-    "model": "Data Analysis Agent",
-    "organization": "ByteDance Lark Base & NovaBase Team",
-    "url": "https://www.larksuite.com/product/base",
-    "score": 96.5,
-    "date": "2026-06-16"
   },
   {
     "model": "arito",
