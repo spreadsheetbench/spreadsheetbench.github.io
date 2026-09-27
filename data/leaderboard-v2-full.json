@@ -1,5 +1,20 @@
 [
   {
+    "model": "arito",
+    "scaffold": "arito",
+    "organization": "arito",
+    "url": "https://arito.ai",
+    "verified": true,
+    "score": 54.51,
+    "date": "2026-09-13",
+    "subscores": {
+      "Template": 62.89,
+      "Fin.Model": 67.00,
+      "Debug": 29.00,
+      "Visualization": 74.86
+    }
+  },
+  {
     "model": "WPS AI",
     "scaffold": "WPS AI",
     "organization": "Kingsoft Office",
@@ -12,21 +27,6 @@
       "Fin.Model": 56.00,
       "Debug": 16.00,
       "Visualization": 71.94
-    }
-  },
-  {
-    "model": "arito",
-    "scaffold": "arito",
-    "organization": "arito",
-    "url": "https://arito.ai",
-    "verified": true,
-    "score": 45.46,
-    "date": "2026-08-04",
-    "subscores": {
-      "Template": 44.33,
-      "Fin.Model": 55.00,
-      "Debug": 28.00,
-      "Visualization": 83.02
     }
   },
   {
